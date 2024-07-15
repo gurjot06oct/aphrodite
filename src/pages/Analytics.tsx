@@ -62,7 +62,6 @@ const Schedule = () => {
                   }}
                   handleDelete={(id) => {
                     var datali = data.filter((it) => it.id != id);
-                    console.log(datali, data);
                     setdata(datali);
                     localStorage.setItem("schedule", JSON.stringify(datali));
                   }}
