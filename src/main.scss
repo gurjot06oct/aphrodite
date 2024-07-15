@@ -20,7 +20,7 @@
     --background-color: #ffffff;
     --text-color: #000000;
     --element-color: #1B1B1C;
-    --primary-color: #6200ee;
+    --primary-color: #eee;
     --secondary-color: #0450CB;
     --ternary-color: #919399;
 }
@@ -243,7 +243,7 @@ svg {
 }
 
 .item {
-    background-color: #2d2d2d;
+    background-color: var(--primary-color);
     padding: 20px;
     text-align: center;
     border-radius: 15px;
@@ -397,7 +397,7 @@ tr>td:nth-child(2) {
     max-width: 100%;
     margin: 20px;
     border: 1px solid var(--ternary-color);
-    border-radius: 10px;
+    border-radius: 6px;
     padding: 0 20px;
 
     input {
@@ -427,9 +427,7 @@ tr>td:nth-child(2) {
     padding: 7px 25px;
     border-radius: 10px;
     font-size: 16px;
-    background-color: #333;
     cursor: pointer;
-    box-shadow: 0 0px 18px -10px rgba(0, 0, 0, 1);
 
     &.disabled {
         opacity: 0.6;
@@ -533,7 +531,7 @@ tr>td:nth-child(2) {
 
         tbody p {
             padding: 5px 10px;
-            background: #222;
+            background: var(--primary-color);
             border-radius: 7px;
         }
     }

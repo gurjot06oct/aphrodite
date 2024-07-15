@@ -30,10 +30,11 @@ const Schedule = () => {
     }
   }, []);
   const handleAdd = () => {
-    setdata([...data, { status: false, title, id: data.length + 1 }]);
+    var timestamp = new Date().getTime();
+    setdata([...data, { status: false, title, id: timestamp }]);
     localStorage.setItem(
       "schedule",
-      JSON.stringify([...data, { status: false, title, id: data.length + 1 }])
+      JSON.stringify([...data, { status: false, title, id: timestamp }])
     );
     handleClose();
   };
@@ -59,6 +60,12 @@ const Schedule = () => {
                     setdata(datali);
                     localStorage.setItem("schedule", JSON.stringify(datali));
                   }}
+                  handleDelete={(id) => {
+                    var datali = data.filter((it) => it.id != id);
+                    console.log(datali, data);
+                    setdata(datali);
+                    localStorage.setItem("schedule", JSON.stringify(datali));
+                  }}
                 />
               ))}
             </tbody>
@@ -68,6 +75,11 @@ const Schedule = () => {
           className="add-todo"
           onClick={() => {
             setopen(true);
+            setTimeout(() => {
+              if (ref.current) {
+                ref.current.focus();
+              }
+            }, 100);
           }}
         >
           <svg
@@ -114,9 +126,8 @@ const Element = ({
   handleUpdate?: (val: number, e: boolean) => void;
   handleDelete?: (val: number) => void;
 }) => {
-  const [visible, setvisible] = useState(true);
   return (
-    <tr className={visible ? "" : "hidden"}>
+    <tr>
       <td>
         <Checkbox
           value={item.status}
@@ -130,7 +141,6 @@ const Element = ({
         <svg
           onClick={() => {
             handleDelete(item.id);
-            setvisible(false);
           }}
           width="24"
           height="24"
