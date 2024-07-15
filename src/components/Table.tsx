@@ -72,8 +72,8 @@ const Element = ({
   handleDelete = () => {},
 }: {
   item: TableData;
-  handleUpdate: (val: number, e: object) => void;
-  handleDelete: (val: number) => void;
+  handleUpdate?: (val: number, e: object) => void;
+  handleDelete?: (val: number) => void;
 }) => {
   const [visible, setvisible] = React.useState(true);
   return (

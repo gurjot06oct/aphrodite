@@ -3,17 +3,12 @@ import Loading from "./components/Loading";
 import TabBar from "./components/TabBar";
 import Problems from "./pages/Problems";
 import Analytics from "./pages/Analytics";
-import Schedule from "./pages/Schedule";
 import Learning from "./pages/Learning";
 
 export const router = createBrowserRouter([
   {
     path: "/Problems",
     element: <Problems />,
-  },
-  {
-    path: "/Schedule",
-    element: <Schedule />,
   },
   {
     path: "/",
@@ -24,8 +19,7 @@ export const router = createBrowserRouter([
     element: <Learning />,
   },
 ]);
-
-function App() {
+const App = () => {
   return (
     <>
       <div className="mainView">
@@ -35,6 +29,6 @@ function App() {
       <Loading />
     </>
   );
-}
+};
 
 export default App;
