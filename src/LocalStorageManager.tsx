@@ -150,7 +150,6 @@ export class Database {
 
 export const ProblemsDB = new Database("Problems");
 export const LearningDB = new Database("Learning");
-
 export const Initialized = localStorage.getItem("Initalized");
 if (!Initialized) {
   localStorage.setItem("Initalized", "true");
